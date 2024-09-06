@@ -1,0 +1,170 @@
+{
+    "bridge": {
+        "name": "Homebridge",
+        "username": "-----",
+        "port": 11111,
+        "pin": "-----",
+        "advertiser": "avahi"
+    },
+    "accessories": [
+        {
+            "accessory": "mqttthing",
+            "type": "temperatureSensor",
+            "name": "Termometr",
+            "username": "MQTT name",
+            "password": "password",
+            "url": "mqtt://ip_addres",
+            "topics": {
+                "getCurrentTemperature": {
+                    "topic": "tele/MagicESP/SENSOR",
+                    "apply": "return JSON.parse(message).DHT11.Temperature;"
+                }
+            }
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "humiditySensor",
+            "name": "Wilgotność",
+            "username": "MQTT name",
+            "password": "password",
+            "url": "mqtt://ip_addres",
+            "topics": {
+                "getCurrentRelativeHumidity": {
+                    "topic": "tele/MagicESP/SENSOR",
+                    "apply": "return JSON.parse(message).DHT11.Humidity;"
+                }
+            }
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "temperatureSensor",
+            "name": "ESP_ST1 - Temperatura",
+            "username": "MQTT name",
+            "password": "password",
+            "url": "mqtt://ip_addres",
+            "topics": {
+                "getCurrentTemperature": {
+                    "topic": "ESP_Smart_Termo/ESP_ST1/Output",
+                    "apply": "return JSON.parse(message).Temperature;"
+                },
+                "getBatteryLevel": {
+                    "topic": "ESP_Smart_Termo/ESP_ST1/Output",
+                    "apply": "return JSON.parse(message).BatteryPercent;"
+                },
+                "getStatusLowBattery": {
+                    "topic": "ESP_Smart_Termo/ESP_ST1/Output",
+                    "apply": "return JSON.parse(message).BatteryLow;"
+                }
+            }
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "humiditySensor",
+            "name": "ESP_ST1 - Wilgotność",
+            "username": "MQTT name",
+            "password": "password",
+            "url": "mqtt://ip_addres",
+            "topics": {
+                "getCurrentRelativeHumidity": {
+                    "topic": "ESP_Smart_Termo/ESP_ST1/Output",
+                    "apply": "return JSON.parse(message).Humidity;"
+                },
+                "getBatteryLevel": {
+                    "topic": "ESP_Smart_Termo/ESP_ST1/Output",
+                    "apply": "return JSON.parse(message).BatteryPercent;"
+                }
+            }
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "temperatureSensor",
+            "name": "ESP_ST2 - Temperatura",
+            "username": "MQTT name",
+            "password": "password",
+            "url": "mqtt://ip_addres",
+            "topics": {
+                "getCurrentTemperature": {
+                    "topic": "ESP_Smart_Termo/ESP_ST2/Output",
+                    "apply": "return JSON.parse(message).Temperature;"
+                },
+                "getBatteryLevel": {
+                    "topic": "ESP_Smart_Termo/ESP_ST2/Output",
+                    "apply": "return JSON.parse(message).BatteryPercent;"
+                },
+                "getStatusLowBattery": {
+                    "topic": "ESP_Smart_Termo/ESP_ST2/Output",
+                    "apply": "return JSON.parse(message).BatteryLow;"
+                }
+            }
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "humiditySensor",
+            "name": "ESP_ST2 - Wilgotność",
+            "username": "MQTT name",
+            "password": "password",
+            "url": "mqtt://ip_addres",
+            "topics": {
+                "getCurrentRelativeHumidity": {
+                    "topic": "ESP_Smart_Termo/ESP_ST2/Output",
+                    "apply": "return JSON.parse(message).Humidity;"
+                },
+                "getBatteryLevel": {
+                    "topic": "ESP_Smart_Termo/ESP_ST2/Output",
+                    "apply": "return JSON.parse(message).BatteryPercent;"
+                }
+            }
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "temperatureSensor",
+            "name": "ESP_ST3 - Temperatura",
+            "username": "MQTT name",
+            "password": "password",
+            "url": "mqtt://ip_addres",
+            "topics": {
+                "getCurrentTemperature": {
+                    "topic": "ESP_Smart_Termo/ESP_ST3/Output",
+                    "apply": "return JSON.parse(message).Temperature;"
+                },
+                "getBatteryLevel": {
+                    "topic": "ESP_Smart_Termo/ESP_ST3/Output",
+                    "apply": "return JSON.parse(message).BatteryPercent;"
+                },
+                "getStatusLowBattery": {
+                    "topic": "ESP_Smart_Termo/ESP_ST3/Output",
+                    "apply": "return JSON.parse(message).BatteryLow;"
+                }
+            }
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "humiditySensor",
+            "name": "ESP_ST3 - Wilgotność",
+            "username": "MQTT name",
+            "password": "password",
+            "url": "mqtt://ip_addres",
+            "topics": {
+                "getCurrentRelativeHumidity": {
+                    "topic": "ESP_Smart_Termo/ESP_ST3/Output",
+                    "apply": "return JSON.parse(message).Humidity;"
+                },
+                "getBatteryLevel": {
+                    "topic": "ESP_Smart_Termo/ESP_ST3/Output",
+                    "apply": "return JSON.parse(message).BatteryPercent;"
+                }
+            }
+        }
+    ],
+    "platforms": [
+        {
+            "name": "Config",
+            "port": 8581,
+            "auth": "form",
+            "theme": "dark-mode",
+            "tempUnits": "c",
+            "lang": "pl",
+            "platform": "config"
+        }
+    ]
+}
